@@ -1,4 +1,5 @@
 import { Component } from "react";
+import { Spinner } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 const API1 = "https://www.omdbapi.com/?s=Avengers&apikey=6d0fc472";
@@ -76,6 +77,8 @@ class Films extends Component {
 
     return (
       <div>
+        <h4 className="bg-dark text-white ps-4 pt-4 m-0">Avengers</h4>
+
         {/* Avengers */}
         {avengersFilms.length > 0 ? (
           <div className="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 row-cols-xl-6 g-2 bg-dark pt-4 ps-4 pe-4">
@@ -95,7 +98,11 @@ class Films extends Component {
             ))}
           </div>
         ) : (
-          <p className="text-white">Caricamento in corso...</p>
+          <div className="text-center bg-dark">
+            <Spinner animation="border" variant="primary" role="status">
+              <span className="visually-hidden">Loading...</span>
+            </Spinner>
+          </div>
         )}
 
         <h4 className="bg-dark text-white ps-4 pt-4 m-0">
@@ -121,9 +128,11 @@ class Films extends Component {
             ))}
           </div>
         ) : (
-          <p className="text-white">
-            Caricamento in corso... Lord of the Rings
-          </p>
+          <div className="text-center bg-dark">
+            <Spinner animation="border" variant="primary" role="status">
+              <span className="visually-hidden">Loading...</span>
+            </Spinner>
+          </div>
         )}
 
         <h4 className="bg-dark text-white ps-4 pt-4 m-0">Disney</h4>
@@ -152,9 +161,11 @@ class Films extends Component {
             ))}
           </div>
         ) : (
-          <p className="text-white">
-            Caricamento in corso... Lord of the Rings
-          </p>
+          <div className="text-center bg-dark">
+            <Spinner animation="border" variant="primary" role="status">
+              <span className="visually-hidden">Loading...</span>
+            </Spinner>
+          </div>
         )}
       </div>
     );

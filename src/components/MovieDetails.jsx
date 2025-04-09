@@ -1,7 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import { Robot } from "react-bootstrap-icons";
+import { Spinner } from "react-bootstrap";
 
 const MovieDetails = () => {
   const { movieId } = useParams(); // Usa movieId
@@ -31,7 +30,14 @@ const MovieDetails = () => {
       });
   }, [movieId]);
 
-  if (!movie) return <p>Loading...</p>;
+  if (!movie)
+    return (
+      <div className="text-center bg-dark">
+        <Spinner animation="border" variant="primary" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </Spinner>
+      </div>
+    );
 
   return (
     <div>
