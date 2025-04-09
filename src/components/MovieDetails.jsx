@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { Spinner } from "react-bootstrap";
 
 const MovieDetails = () => {
-  const { movieId } = useParams(); // Usa movieId
+  const { movieId } = useParams();
   const [movie, setMovie] = useState(null);
 
   useEffect(() => {
@@ -45,9 +45,11 @@ const MovieDetails = () => {
         <div className="col text-center px-1" key={movie.imdbID}>
           <div className="details-container">
             <h2 className="text-white">{movie.Title}</h2>
+            <p className="text-white">{movie.Runtime}</p>
             <img className="img-fluid" src={movie.Poster} alt={movie.Title} />
             <h3 className="text-white pt-3">{movie.Year}</h3>
-            <h4 className="text-white">{movie.Type}</h4>
+            <h4 className="text-white">{movie.Genre}</h4>
+            <h5 className="text-white">{movie.Director}</h5>
           </div>
         </div>
       </div>
