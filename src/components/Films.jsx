@@ -82,16 +82,14 @@ class Films extends Component {
             {avengersFilms.slice(0, 6).map((film) => (
               <div className="col text-center px-1" key={film.imdbID}>
                 <div className="film-container">
-                  <img
-                    className="img-fluid"
-                    src={film.Poster}
-                    alt={film.Title}
-                  />
+                  <Link to={`/movie-details/${film.imdbID}`}>
+                    <img
+                      className="img-fluid"
+                      src={film.Poster}
+                      alt={film.Title}
+                    />
+                  </Link>
                   <div className="film-title">{film.Title}</div>
-                  <Link
-                    className="btn btn-primary"
-                    to={`/movie-details/${film.imdbID}`}
-                  ></Link>
                 </div>
               </div>
             ))}
@@ -110,11 +108,13 @@ class Films extends Component {
             {lordOfTheRingsFilms.slice(0, 6).map((film) => (
               <div className="col text-center px-1" key={film.imdbID}>
                 <div className="film-container">
-                  <img
-                    className="img-fluid"
-                    src={film.Poster}
-                    alt={film.Title}
-                  />
+                  <Link to={`/movie-details/${film.imdbID}`}>
+                    <img
+                      className="img-fluid"
+                      src={film.Poster}
+                      alt={film.Title}
+                    />
+                  </Link>
                   <div className="film-title">{film.Title}</div>
                 </div>
               </div>
@@ -134,16 +134,18 @@ class Films extends Component {
             {disney.slice(0, 6).map((film) => (
               <div className="col text-center px-1" key={film.imdbID}>
                 <div className="film-container">
-                  <img
-                    className="img-fluid"
-                    src={film.Poster}
-                    alt={film.Title}
-                    style={{
-                      objectFit: "cover",
-                      height: "100%",
-                      borderRadius: "8px",
-                    }}
-                  />
+                  <Link to={`/movie-details/${film.imdbID}`}>
+                    <img
+                      className="img-fluid"
+                      src={film.Poster}
+                      alt={film.Title}
+                      style={{
+                        objectFit: "cover",
+                        height: "100%",
+                        borderRadius: "8px",
+                      }}
+                    />
+                  </Link>
                   <div className="film-title">{film.Title}</div>
                 </div>
               </div>
